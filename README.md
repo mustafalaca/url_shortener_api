@@ -1,6 +1,6 @@
 # url_shortener_api
 
-Restful API demonstrates URL Shortining application with Flask framework by using MVC design pattern
+Restful API demonstrates URL Shortining application with Flask framework by using MVC design pattern.
 
 
 Routes:
