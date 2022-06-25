@@ -8,7 +8,7 @@ bp = Blueprint("url_shortener", __name__)
 def url_shortener():
     original_url = request.get_json()['original_url']
     shortened_url_data = url_shortener_processor(original_url)
-    return jsonify({'result': shortened_url_data})  # TODO localhost:5001/short_url dön!
+    return jsonify({'result': shortened_url_data})
 
 
 @bp.route('/<short_url>', methods=['GET'])
