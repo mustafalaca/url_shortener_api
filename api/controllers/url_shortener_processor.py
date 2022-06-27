@@ -11,11 +11,16 @@ session = Session()
 
 def url_shortener_processor(original_url):
     short_url = generate_short_url()
+    unique_control = session.query(UrlRecords).filter_by(original_url=original_url).first()
+    if not unique_control:
+        url = UrlRecords(original_url=original_url, short_url=short_url)
+        session.add(url)
+        session.commit()
+        short_url = url.short_url
+    else:
+        short_url = unique_control.short_url
 
-    url = UrlRecords(original_url=original_url, short_url=short_url)
-    session.add(url)
-    session.commit()
-    return f'http://{host}:{port}/{url.short_url}'
+    return f'http://{host}:{port}/{short_url}'
 
 
 def generate_short_url():
