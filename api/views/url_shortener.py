@@ -14,7 +14,6 @@ def url_shortener():
 @bp.route('/<short_url>', methods=['GET'])
 def redirect_to_shortened_url(short_url):
     url_to_go = redirect_to_domain(short_url)
-    print("VIEW-- ", url_to_go)
     return redirect(url_to_go)
 
 
