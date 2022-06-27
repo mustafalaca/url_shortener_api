@@ -19,7 +19,7 @@ spec:
   selector:
     matchLabels:
       app: url-shortener-api
-  replicas: 1 # type how many pod you want to run
+  replicas: 5 # type how many pod you want to run
   template:
     metadata:
       labels:
