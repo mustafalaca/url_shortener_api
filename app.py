@@ -1,6 +1,10 @@
+from dotenv import load_dotenv
+
+load_dotenv('local.env')
+
+
 from api.views import url_shortener
 from flask import Flask
-
 
 def create_app():
     app = Flask(__name__)
