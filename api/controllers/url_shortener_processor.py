@@ -5,12 +5,14 @@ import os
 
 host = os.getenv('FLASK_RUN_HOST')
 port = os.getenv('FLASK_RUN_PORT')
-
 session = Session()
 
 
 def url_shortener_processor(original_url):
+    if 'http' not in original_url:
+        original_url = f'http://{original_url}'
     short_url = generate_short_url()
+
     unique_control = session.query(UrlRecords).filter_by(original_url=original_url).first()
     if not unique_control:
         url = UrlRecords(original_url=original_url, short_url=short_url)
