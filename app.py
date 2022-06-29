@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 
-load_dotenv('local.env')
+load_dotenv('development.env')
 
 
 from api.views import url_shortener
