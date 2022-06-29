@@ -27,8 +27,6 @@ spec:
     spec:
       containers:
         - name: url-shortener-api
-          env_file:
-            - local.env
           image: mustafalaca/url_shortener_api:latest
           imagePullPolicy: Always
           ports:
