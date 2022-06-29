@@ -6,4 +6,4 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-CMD ["flask", "run"]
+CMD gunicorn --bind 0.0.0.0:5000 -e FLASK_ENV=development wsgi:app
